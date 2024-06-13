@@ -1,0 +1,12 @@
+version: 1.0
+services:
+  web:
+    image: railway/python:3.9
+    env:
+      PYTHONUNBUFFERED: 1
+      PORT: 8080
+    build:
+      context: .
+    command: uvicorn app:app --host 0.0.0.0 --port 8080
+    ports:
+      - 8080:8080
